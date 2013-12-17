@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.2.6-build.1992+sha.d5c5e2b
+ * @license AngularJS v1.2.6-build.1993+sha.2f91cfd
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -69,7 +69,7 @@ function minErr(module) {
       return match;
     });
 
-    message = message + '\nhttp://errors.angularjs.org/1.2.6-build.1992+sha.d5c5e2b/' +
+    message = message + '\nhttp://errors.angularjs.org/1.2.6-build.1993+sha.2f91cfd/' +
       (module ? module + '/' : '') + code;
     for (i = 2; i < arguments.length; i++) {
       message = message + (i == 2 ? '?' : '&') + 'p' + (i-2) + '=' +
