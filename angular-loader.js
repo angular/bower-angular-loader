@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.2.7-build.2022+sha.c31df32
+ * @license AngularJS v1.2.7-build.2023+sha.870232b
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -69,7 +69,7 @@ function minErr(module) {
       return match;
     });
 
-    message = message + '\nhttp://errors.angularjs.org/1.2.7-build.2022+sha.c31df32/' +
+    message = message + '\nhttp://errors.angularjs.org/1.2.7-build.2023+sha.870232b/' +
       (module ? module + '/' : '') + code;
     for (i = 2; i < arguments.length; i++) {
       message = message + (i == 2 ? '?' : '&') + 'p' + (i-2) + '=' +
