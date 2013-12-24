@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.2.7-build.2025+sha.d1c4766
+ * @license AngularJS v1.2.7-build.2026+sha.7d6e5a2
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -69,7 +69,7 @@ function minErr(module) {
       return match;
     });
 
-    message = message + '\nhttp://errors.angularjs.org/1.2.7-build.2025+sha.d1c4766/' +
+    message = message + '\nhttp://errors.angularjs.org/1.2.7-build.2026+sha.7d6e5a2/' +
       (module ? module + '/' : '') + code;
     for (i = 2; i < arguments.length; i++) {
       message = message + (i == 2 ? '?' : '&') + 'p' + (i-2) + '=' +
