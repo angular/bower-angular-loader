@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.2.10-build.2179+sha.ca6b7d0
+ * @license AngularJS v1.2.10-build.2180+sha.131410b
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -69,7 +69,7 @@ function minErr(module) {
       return match;
     });
 
-    message = message + '\nhttp://errors.angularjs.org/1.2.10-build.2179+sha.ca6b7d0/' +
+    message = message + '\nhttp://errors.angularjs.org/1.2.10-build.2180+sha.131410b/' +
       (module ? module + '/' : '') + code;
     for (i = 2; i < arguments.length; i++) {
       message = message + (i == 2 ? '?' : '&') + 'p' + (i-2) + '=' +
