@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.2.11-build.2184+sha.319dd1a
+ * @license AngularJS v1.2.11-build.2185+sha.4f735b0
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -69,7 +69,7 @@ function minErr(module) {
       return match;
     });
 
-    message = message + '\nhttp://errors.angularjs.org/1.2.11-build.2184+sha.319dd1a/' +
+    message = message + '\nhttp://errors.angularjs.org/1.2.11-build.2185+sha.4f735b0/' +
       (module ? module + '/' : '') + code;
     for (i = 2; i < arguments.length; i++) {
       message = message + (i == 2 ? '?' : '&') + 'p' + (i-2) + '=' +
