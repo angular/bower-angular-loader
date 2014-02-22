@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.2.14-build.2313+sha.61b2515
+ * @license AngularJS v1.2.14-build.2314+sha.ffe5115
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -69,7 +69,7 @@ function minErr(module) {
       return match;
     });
 
-    message = message + '\nhttp://errors.angularjs.org/1.2.14-build.2313+sha.61b2515/' +
+    message = message + '\nhttp://errors.angularjs.org/1.2.14-build.2314+sha.ffe5115/' +
       (module ? module + '/' : '') + code;
     for (i = 2; i < arguments.length; i++) {
       message = message + (i == 2 ? '?' : '&') + 'p' + (i-2) + '=' +
