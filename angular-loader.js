@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.2.14
+ * @license AngularJS v1.2.15-build.2357+sha.2616907
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -69,7 +69,7 @@ function minErr(module) {
       return match;
     });
 
-    message = message + '\nhttp://errors.angularjs.org/1.2.14/' +
+    message = message + '\nhttp://errors.angularjs.org/1.2.15-build.2357+sha.2616907/' +
       (module ? module + '/' : '') + code;
     for (i = 2; i < arguments.length; i++) {
       message = message + (i == 2 ? '?' : '&') + 'p' + (i-2) + '=' +
@@ -144,7 +144,7 @@ function setupModuleLoader(window) {
      * Then you can create an injector and load your modules like this:
      *
      * ```js
-     * var injector = angular.injector(['ng', 'MyModule'])
+     * var injector = angular.injector(['ng', 'myModule'])
      * ```
      *
      * However it's more likely that you'll just use
