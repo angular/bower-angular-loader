@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.2.17-build.116+sha.b6eb5fd
+ * @license AngularJS v1.3.0-build.2607+sha.b2e48e6
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -69,7 +69,7 @@ function minErr(module) {
       return match;
     });
 
-    message = message + '\nhttp://errors.angularjs.org/1.2.17-build.116+sha.b6eb5fd/' +
+    message = message + '\nhttp://errors.angularjs.org/1.3.0-build.2607+sha.b2e48e6/' +
       (module ? module + '/' : '') + code;
     for (i = 2; i < arguments.length; i++) {
       message = message + (i == 2 ? '?' : '&') + 'p' + (i-2) + '=' +
@@ -152,9 +152,9 @@ function setupModuleLoader(window) {
      * {@link angular.bootstrap} to simplify this process for you.
      *
      * @param {!string} name The name of the module to create or retrieve.
-<<<<<* @param {!Array.<string>=} requires If specified then new module is being created. If
->>>>>*        unspecified then the module is being retrieved for further configuration.
-     * @param {Function} configFn Optional configuration function for the module. Same as
+     * @param {!Array.<string>=} requires If specified then new module is being created. If
+     *        unspecified then the module is being retrieved for further configuration.
+     * @param {Function=} configFn Optional configuration function for the module. Same as
      *        {@link angular.Module#config Module#config()}.
      * @returns {module} new module with the {@link angular.Module} api.
      */
