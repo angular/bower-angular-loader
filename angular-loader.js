@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.3.0-build.3098+sha.1a2caad
+ * @license AngularJS v1.2.23-build.405+sha.00456a8
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -69,7 +69,7 @@ function minErr(module) {
       return match;
     });
 
-    message = message + '\nhttp://errors.angularjs.org/1.3.0-build.3098+sha.1a2caad/' +
+    message = message + '\nhttp://errors.angularjs.org/1.2.23-build.405+sha.00456a8/' +
       (module ? module + '/' : '') + code;
     for (i = 2; i < arguments.length; i++) {
       message = message + (i == 2 ? '?' : '&') + 'p' + (i-2) + '=' +
@@ -180,18 +180,14 @@ function setupModuleLoader(window) {
         var invokeQueue = [];
 
         /** @type {!Array.<Function>} */
-        var configBlocks = [];
-
-        /** @type {!Array.<Function>} */
         var runBlocks = [];
 
-        var config = invokeLater('$injector', 'invoke', 'push', configBlocks);
+        var config = invokeLater('$injector', 'invoke');
 
         /** @type {angular.Module} */
         var moduleInstance = {
           // Private state
           _invokeQueue: invokeQueue,
-          _configBlocks: configBlocks,
           _runBlocks: runBlocks,
 
           /**
@@ -384,10 +380,9 @@ function setupModuleLoader(window) {
          * @param {String=} insertMethod
          * @returns {angular.Module}
          */
-        function invokeLater(provider, method, insertMethod, queue) {
-          if (!queue) queue = invokeQueue;
+        function invokeLater(provider, method, insertMethod) {
           return function() {
-            queue[insertMethod || 'push']([provider, method, arguments]);
+            invokeQueue[insertMethod || 'push']([provider, method, arguments]);
             return moduleInstance;
           };
         }
