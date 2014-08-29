@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.3.0-build.3153+sha.4f9ac07
+ * @license AngularJS v1.3.0-build.3154+sha.6f7018d
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -72,7 +72,7 @@ function minErr(module, ErrorConstructor) {
       return match;
     });
 
-    message = message + '\nhttp://errors.angularjs.org/1.3.0-build.3153+sha.4f9ac07/' +
+    message = message + '\nhttp://errors.angularjs.org/1.3.0-build.3154+sha.6f7018d/' +
       (module ? module + '/' : '') + code;
     for (i = 2; i < arguments.length; i++) {
       message = message + (i == 2 ? '?' : '&') + 'p' + (i-2) + '=' +
