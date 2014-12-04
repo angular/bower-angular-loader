@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.3.6-build.3666+sha.cb19229
+ * @license AngularJS v1.3.6-build.3667+sha.f2e7f87
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -55,7 +55,7 @@ function minErr(module, ErrorConstructor) {
       return match;
     });
 
-    message = message + '\nhttp://errors.angularjs.org/1.3.6-build.3666+sha.cb19229/' +
+    message = message + '\nhttp://errors.angularjs.org/1.3.6-build.3667+sha.f2e7f87/' +
       (module ? module + '/' : '') + code;
     for (i = 2; i < arguments.length; i++) {
       message = message + (i == 2 ? '?' : '&') + 'p' + (i - 2) + '=' +
