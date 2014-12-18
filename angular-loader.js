@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.3.8-build.3714+sha.ae637ac
+ * @license AngularJS v1.3.8-build.3715+sha.6e80d0a
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -55,7 +55,7 @@ function minErr(module, ErrorConstructor) {
       return match;
     });
 
-    message = message + '\nhttp://errors.angularjs.org/1.3.8-build.3714+sha.ae637ac/' +
+    message = message + '\nhttp://errors.angularjs.org/1.3.8-build.3715+sha.6e80d0a/' +
       (module ? module + '/' : '') + code;
     for (i = 2; i < arguments.length; i++) {
       message = message + (i == 2 ? '?' : '&') + 'p' + (i - 2) + '=' +
