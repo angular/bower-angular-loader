@@ -2,6 +2,7 @@
   "name": "angular-loader",
   "version": "1.4.0-build.3797+sha.0db5b21",
   "description": "AngularJS module for asynchronously loading modules",
+  "main": "angular-loader.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
