@@ -1,6 +1,6 @@
 /**
- * @license AngularJS v1.3.16-build.89+sha.1c282af
- * (c) 2010-2014 Google, Inc. http://angularjs.org
+ * @license AngularJS v1.4.0-build.3917+sha.ea9fd82
+ * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
  */
 
@@ -39,28 +39,33 @@
 function minErr(module, ErrorConstructor) {
   ErrorConstructor = ErrorConstructor || Error;
   return function() {
-    var code = arguments[0],
-      prefix = '[' + (module ? module + ':' : '') + code + '] ',
-      template = arguments[1],
-      templateArgs = arguments,
+    var SKIP_INDEXES = 2;
 
-      message, i;
+    var templateArgs = arguments,
+      code = templateArgs[0],
+      message = '[' + (module ? module + ':' : '') + code + '] ',
+      template = templateArgs[1],
+      paramPrefix, i;
 
-    message = prefix + template.replace(/\{\d+\}/g, function(match) {
-      var index = +match.slice(1, -1), arg;
+    message += template.replace(/\{\d+\}/g, function(match) {
+      var index = +match.slice(1, -1),
+        shiftedIndex = index + SKIP_INDEXES;
 
-      if (index + 2 < templateArgs.length) {
-        return toDebugString(templateArgs[index + 2]);
+      if (shiftedIndex < templateArgs.length) {
+        return toDebugString(templateArgs[shiftedIndex]);
       }
+
       return match;
     });
 
-    message = message + '\nhttp://errors.angularjs.org/1.3.16-build.89+sha.1c282af/' +
+    message += '\nhttp://errors.angularjs.org/1.4.0-build.3917+sha.ea9fd82/' +
       (module ? module + '/' : '') + code;
-    for (i = 2; i < arguments.length; i++) {
-      message = message + (i == 2 ? '?' : '&') + 'p' + (i - 2) + '=' +
-        encodeURIComponent(toDebugString(arguments[i]));
+
+    for (i = SKIP_INDEXES, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
+      message += paramPrefix + 'p' + (i - SKIP_INDEXES) + '=' +
+        encodeURIComponent(toDebugString(templateArgs[i]));
     }
+
     return new ErrorConstructor(message);
   };
 }
@@ -257,6 +262,18 @@ function setupModuleLoader(window) {
            * See {@link auto.$provide#constant $provide.constant()}.
            */
           constant: invokeLater('$provide', 'constant', 'unshift'),
+
+           /**
+           * @ngdoc method
+           * @name angular.Module#decorator
+           * @module ng
+           * @param {string} The name of the service to decorate.
+           * @param {Function} This function will be invoked when the service needs to be
+           *                                    instantiated and should return the decorated service instance.
+           * @description
+           * See {@link auto.$provide#decorator $provide.decorator()}.
+           */
+          decorator: invokeLater('$provide', 'decorator'),
 
           /**
            * @ngdoc method
