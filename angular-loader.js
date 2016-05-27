@@ -1,6 +1,6 @@
 /**
- * @license AngularJS v1.5.6-build.4834+sha.55b7f7d
- * (c) 2010-2016 Google, Inc. http://angularjs.org
+ * @license AngularJS v1.4.11
+ * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
  */
 
@@ -87,7 +87,7 @@ function minErr(module, ErrorConstructor) {
       return match;
     });
 
-    message += '\nhttp://errors.angularjs.org/1.5.6-build.4834+sha.55b7f7d/' +
+    message += '\nhttp://errors.angularjs.org/1.4.11/' +
       (module ? module + '/' : '') + code;
 
     for (i = SKIP_INDEXES, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
@@ -302,7 +302,7 @@ function setupModuleLoader(window) {
            * @description
            * See {@link auto.$provide#decorator $provide.decorator()}.
            */
-          decorator: invokeLaterAndSetModuleName('$provide', 'decorator', configBlocks),
+          decorator: invokeLaterAndSetModuleName('$provide', 'decorator'),
 
           /**
            * @ngdoc method
@@ -383,19 +383,6 @@ function setupModuleLoader(window) {
 
           /**
            * @ngdoc method
-           * @name angular.Module#component
-           * @module ng
-           * @param {string} name Name of the component in camel-case (i.e. myComp which will match as my-comp)
-           * @param {Object} options Component definition object (a simplified
-           *    {@link ng.$compile#directive-definition-object directive definition object})
-           *
-           * @description
-           * See {@link ng.$compileProvider#component $compileProvider.component()}.
-           */
-          component: invokeLaterAndSetModuleName('$compileProvider', 'component'),
-
-          /**
-           * @ngdoc method
            * @name angular.Module#config
            * @module ng
            * @param {Function} configFn Execute this function on module load. Useful for service
@@ -448,11 +435,10 @@ function setupModuleLoader(window) {
          * @param {string} method
          * @returns {angular.Module}
          */
-        function invokeLaterAndSetModuleName(provider, method, queue) {
-          if (!queue) queue = invokeQueue;
+        function invokeLaterAndSetModuleName(provider, method) {
           return function(recipeName, factoryFunction) {
             if (factoryFunction && isFunction(factoryFunction)) factoryFunction.$$moduleName = name;
-            queue.push([provider, method, arguments]);
+            invokeQueue.push([provider, method, arguments]);
             return moduleInstance;
           };
         }
