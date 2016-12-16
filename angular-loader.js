@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.6.1-build.5207+sha.fbe0b73
+ * @license AngularJS v1.5.10
  * (c) 2010-2016 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -87,7 +87,7 @@ function minErr(module, ErrorConstructor) {
       return match;
     });
 
-    message += '\nhttp://errors.angularjs.org/1.6.1-build.5207+sha.fbe0b73/' +
+    message += '\nhttp://errors.angularjs.org/1.5.10/' +
       (module ? module + '/' : '') + code;
 
     for (i = SKIP_INDEXES, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
@@ -302,7 +302,7 @@ function setupModuleLoader(window) {
            * @description
            * See {@link auto.$provide#decorator $provide.decorator()}.
            */
-          decorator: invokeLaterAndSetModuleName('$provide', 'decorator', configBlocks),
+          decorator: invokeLaterAndSetModuleName('$provide', 'decorator'),
 
           /**
            * @ngdoc method
@@ -448,11 +448,10 @@ function setupModuleLoader(window) {
          * @param {string} method
          * @returns {angular.Module}
          */
-        function invokeLaterAndSetModuleName(provider, method, queue) {
-          if (!queue) queue = invokeQueue;
+        function invokeLaterAndSetModuleName(provider, method) {
           return function(recipeName, factoryFunction) {
             if (factoryFunction && isFunction(factoryFunction)) factoryFunction.$$moduleName = name;
-            queue.push([provider, method, arguments]);
+            invokeQueue.push([provider, method, arguments]);
             return moduleInstance;
           };
         }
