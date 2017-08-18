@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.6.6-build.5452+sha.6d2ff0a
+ * @license AngularJS v1.6.6
  * (c) 2010-2017 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -123,7 +123,7 @@ function isValidObjectMaxDepth(maxDepth) {
  * @description
  *
  * This object provides a utility for producing rich Error messages within
- * AngularJS. It can be called as follows:
+ * Angular. It can be called as follows:
  *
  * var exampleMinErr = minErr('example');
  * throw exampleMinErr('one', 'This {0} is {1}', foo, bar);
@@ -170,7 +170,7 @@ function minErr(module, ErrorConstructor) {
       return match;
     });
 
-    message += '\nhttp://errors.angularjs.org/1.6.6-build.5452+sha.6d2ff0a/' +
+    message += '\nhttp://errors.angularjs.org/1.6.6/' +
       (module ? module + '/' : '') + code;
 
     for (i = 0, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
@@ -187,7 +187,7 @@ function minErr(module, ErrorConstructor) {
  * @module ng
  * @description
  *
- * Interface for configuring AngularJS {@link angular.module modules}.
+ * Interface for configuring angular {@link angular.module modules}.
  */
 
 function setupModuleLoader(window) {
@@ -214,9 +214,9 @@ function setupModuleLoader(window) {
      * @module ng
      * @description
      *
-     * The `angular.module` is a global place for creating, registering and retrieving AngularJS
+     * The `angular.module` is a global place for creating, registering and retrieving Angular
      * modules.
-     * All modules (AngularJS core or 3rd party) that should be available to an application must be
+     * All modules (angular core or 3rd party) that should be available to an application must be
      * registered using this mechanism.
      *
      * Passing one argument retrieves an existing {@link angular.Module},
@@ -466,13 +466,13 @@ function setupModuleLoader(window) {
            * @ngdoc method
            * @name angular.Module#filter
            * @module ng
-           * @param {string} name Filter name - this must be a valid AngularJS expression identifier
+           * @param {string} name Filter name - this must be a valid angular expression identifier
            * @param {Function} filterFactory Factory function for creating new instance of filter.
            * @description
            * See {@link ng.$filterProvider#register $filterProvider.register()}.
            *
            * <div class="alert alert-warning">
-           * **Note:** Filter names must be valid AngularJS {@link expression} identifiers, such as `uppercase` or `orderBy`.
+           * **Note:** Filter names must be valid angular {@link expression} identifiers, such as `uppercase` or `orderBy`.
            * Names with special characters, such as hyphens and dots, are not allowed. If you wish to namespace
            * your filters, then you can use capitalization (`myappSubsectionFilterx`) or underscores
            * (`myapp_subsection_filterx`).
